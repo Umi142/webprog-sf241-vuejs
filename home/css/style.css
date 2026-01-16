@@ -65,8 +65,9 @@ img {
 /* Styling the v-for food icons */
 .food-icon {
     width: 70px !important; 
-    height: auto;
+    height: auto !important; /* Ensures icons don't stretch */
     margin: 10px;
+    display: inline-block !important; /* Overrides the 'display: block' from the general img rule */
     border: none !important; 
     border-radius: 0 !important; 
     box-shadow: none !important;
