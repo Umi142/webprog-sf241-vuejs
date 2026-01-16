@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Profile - Yumilka Gutierrez</title>
+    <title>Yumilka Gutierrez - Personal Profile</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
-    <div id="app">
+    <div id="vue-container">
         <p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
         
-        <div class="message-box">
+        <div id="app-message">
             {{ message }}
         </div>
 
-        <div class="profile-container">
-            <h1>Personal Profile - {{ name }}</h1>
-            
-            <div class="profile-card">
-                <h2 class="section-title">About Me</h2>
-                <p><strong>Course:</strong><br> {{ profile.course }}</p>
-                <p><strong>IT Experience:</strong><br> {{ profile.experience }}</p>
-                <p><strong>Hobbies & Interests:</strong><br> {{ profile.hobbies }}</p>
-                <p><strong>Goals In Life/Dream:</strong><br> {{ profile.goals }}</p>
-            </div>
+        <h1>Personal Profile Web page - {{ name }}</h1>
+
+        <div class="profile-box">
+            <p><span class="label">Course:</span><br> {{ profile.course }}</p>
+            <p><span class="label">IT Experience:</span><br> {{ profile.experience }}</p>
+            <p><span class="label">Hobbies & Interests:</span><br> {{ profile.hobbies }}</p>
+            <p><span class="label">Goals In Life/Dream:</span><br> {{ profile.goals }}</p>
         </div>
+
+        <img src="cat.jpg" width="500" height="600" alt="Yumilka's Cat Profile">
     </div>
 
     <script>
@@ -35,16 +34,16 @@
             data() {
                 return {
                     message: "Hello Vue!",
-                    name: 'Yumilka Gutierrez',
+                    name: "Yumilka Gutierrez",
                     profile: {
-                        course: 'Bachelor of Science in Computer Science With Specialization in Cyber Security & Forensics',
-                        experience: 'Python Fundamentals • Linux • Cisco Packet Tracer • MySQL Workbench',
-                        hobbies: 'Cats',
-                        goals: 'Have more cats'
+                        course: "Bachelor of Science in Computer Science With Specialization in Cyber Security & Forensics",
+                        experience: "Python Fundamentals • Linux • Cisco Packet Tracer • MySQL Workbench",
+                        hobbies: "Cats",
+                        goals: "Have more cats"
                     }
                 }
             }
-        }).mount('#app')
+        }).mount('#vue-container')
     </script>
 
 </body>
