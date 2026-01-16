@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yumilka Gutierrez - Personal Profile</title>
+    <title>Yumilka Gutierrez - Profile & Food v-for</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
-    <div id="vue-container">
+    <div id="app">
         <p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
-        
-        <div id="app-message">
-            {{ message }}
-        </div>
+        <div id="app-message">{{ message }}</div>
 
         <h1>Personal Profile Web page - {{ name }}</h1>
-
         <div class="profile-box">
             <p><span class="label">Course:</span><br> {{ profile.course }}</p>
             <p><span class="label">IT Experience:</span><br> {{ profile.experience }}</p>
@@ -25,7 +21,11 @@
             <p><span class="label">Goals In Life/Dream:</span><br> {{ profile.goals }}</p>
         </div>
 
-        <img src="cat.jpg" width="500" height="600" alt="Yumilka's Cat Profile">
+        <h1 style="border-top: 2px solid #5C558F; padding-top: 20px;">Food Gallery (v-for)</h1>
+        <p>The 'v-for' directive is used to create images based on the 'manyFoods' array.</p>
+        <div class="food-gallery">
+            <img v-for="food in manyFoods" v-bind:src="food" class="food-icon" alt="food item">
+        </div>
     </div>
 
     <script>
@@ -40,10 +40,20 @@
                         experience: "Python Fundamentals • Linux • Cisco Packet Tracer • MySQL Workbench",
                         hobbies: "Cats",
                         goals: "Have more cats"
-                    }
+                    },
+  
+                    manyFoods: [
+                        'img_burrito.svg',
+                        'img_salad.svg',
+                        'img_cake.svg',
+                        'img_soup.svg',
+                        'img_fish.svg',
+                        'img_pizza.svg',
+                        'img_rice.svg'
+                    ]
                 }
             }
-        }).mount('#vue-container')
+        }).mount('#app')
     </script>
 
 </body>
