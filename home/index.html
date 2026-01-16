@@ -4,47 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile - Yumilka Gutierrez</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
-        .section-title { font-size: 30px; margin-top: 20px; }
-        .gallery img { border-radius: 8px; margin-top: 10px; }
-    </style>
 </head>
 <body>
 
     <div id="app">
-        <h1>Personal Profile Web page - {{ name }}</h1>
+        <p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+        
+        <div class="message-box">
+            {{ message }}
+        </div>
 
-        <section>
-            <h2 class="section-title">About Me</h2>
-            <p><strong>Course:</strong> {{ profile.course }}</p>
-            <p><strong>IT Experience:</strong> {{ profile.experience }}</p>
-            <p><strong>Hobbies & Interests:</strong> {{ profile.hobbies }}</p>
-            <p><strong>Goals In Life/Dream:</strong> {{ profile.goals }}</p>
-        </section>
-
-        <section class="gallery">
-            <h2 class="section-title">Picture Gallery</h2>
-            <img :src="imagePath" width="500" height="600" :alt="imageAlt">
-        </section>
+        <div class="profile-container">
+            <h1>Personal Profile - {{ name }}</h1>
+            
+            <div class="profile-card">
+                <h2 class="section-title">About Me</h2>
+                <p><strong>Course:</strong><br> {{ profile.course }}</p>
+                <p><strong>IT Experience:</strong><br> {{ profile.experience }}</p>
+                <p><strong>Hobbies & Interests:</strong><br> {{ profile.hobbies }}</p>
+                <p><strong>Goals In Life/Dream:</strong><br> {{ profile.goals }}</p>
+            </div>
+        </div>
     </div>
 
     <script>
         const { createApp } = Vue
-
         createApp({
             data() {
                 return {
+                    message: "Hello Vue!",
                     name: 'Yumilka Gutierrez',
                     profile: {
                         course: 'Bachelor of Science in Computer Science With Specialization in Cyber Security & Forensics',
                         experience: 'Python Fundamentals • Linux • Cisco Packet Tracer • MySQL Workbench',
                         hobbies: 'Cats',
                         goals: 'Have more cats'
-                    },
-                    imagePath: 'cat.jpg',
-                    imageAlt: 'posa'
+                    }
                 }
             }
         }).mount('#app')
