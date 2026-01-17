@@ -152,12 +152,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Outfit:wght@400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-@import './css/personalprofile.css';
+/* personal CSS */
+@import '@/components/css/personalprofile.css';
 
-/* Ensure styles don't conflict with App.vue */
 .personal-profile-root {
   text-align: left;
+  font-family: 'Outfit', sans-serif;
+  background-color: white;
 }
 </style>

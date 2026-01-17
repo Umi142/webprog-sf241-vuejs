@@ -1,5 +1,5 @@
 <template>
-  <div id="app-container">
+  <div>
     <h1>500 Pesos</h1>
     <food-item/>
     <food-item2/>
@@ -15,8 +15,16 @@ export default {
 </script>
 
 <style>
-#app-container {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --lime: #D6FF38;
+    --purple: #AF83FF;
+    --teal: #00EDD0;
+    --black: #000000;
+    --white: #ffffff;
 }
 </style>
