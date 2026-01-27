@@ -10,12 +10,29 @@ async function getInstruments() {
 }
 
 onMounted(() => {
-   getInstruments()
+  getInstruments()
 })
 </script>
 
 <template>
-  <ul>
-    <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
-  </ul>
+  <div id="app">
+    <h1>Instruments</h1>
+    <ul>
+      <li v-for="instrument in instruments" :key="instrument.id">
+        {{ instrument.name }}
+      </li>
+    </ul>
+
+    <hr />
+
+    <comment-form />
+    <comment />
+  </div>
 </template>
+
+<style>
+#app {
+  font-family: sans-serif;
+  padding: 20px;
+}
+</style>
