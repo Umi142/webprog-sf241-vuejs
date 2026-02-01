@@ -5,14 +5,6 @@ import { supabase } from './lib/supabaseClient'
 import '../../home/css/style.css'
 
 const message = ref("Hello Vue!")
-const name = ref("Yumilka Gutierrez")
-const profile = ref({
-  course: "Bachelor of Science in Computer Science With Specialization in Cyber Security & Forensics",
-  experience: "Python Fundamentals • Linux • Cisco Packet Tracer • MySQL Workbench",
-  hobbies: "Cats",
-  goals: "Have more cats"
-})
-
 const manyFoods = ref([
   'https://www.w3schools.com/vue/img_burrito.svg',
   'https://www.w3schools.com/vue/img_salad.svg',
@@ -30,65 +22,59 @@ async function getInstruments() {
   instruments.value = data
 }
 
-onMounted(() => {
-  getInstruments()
-})
+onMounted(() => { getInstruments() })
 </script>
 
 <template>
-  <main class="main-container">
-    <p>The message is taken from 'data' inside the Vue instance: {{ message }}</p>
+  <div class="main-wrapper">
     <div id="app-message">{{ message }}</div>
 
-    <h1>Personal Profile Web page - {{ name }}</h1>
-    
-    <div class="profile-box">
-        <p><span class="label">Course:</span><br> {{ profile.course }}</p>
-        <p><span class="label">IT Experience:</span><br> {{ profile.experience }}</p>
-        <p><span class="label">Hobbies & Interests:</span><br> {{ profile.hobbies }}</p>
-        <p><span class="label">Goals In Life/Dream:</span><br> {{ profile.goals }}</p>
-    </div>
+    <simplified-profile />
 
-    <h1 class="section-title">Food Gallery (v-for)</h1>
+    <h1>Food Gallery (v-for)</h1>
     <div class="food-gallery">
-        <img v-for="url in manyFoods" :key="url" :src="url" class="food-icon" alt="food item">
+      <img v-for="url in manyFoods" :key="url" :src="url" class="food-icon">
     </div>
 
-    <hr class="divider" />
+    <hr class="section-divider" />
     
-    <section class="supabase-section">
-      <h2>Instruments from Supabase</h2>
-      <ul>
-        <li v-for="instrument in instruments" :key="instrument.id">
-          {{ instrument.name }}
-        </li>
-      </ul>
-    </section>
+    <h2>Instruments from Supabase</h2>
+    <ul class="supabase-list">
+      <li v-for="inst in instruments" :key="inst.id">{{ inst.name }}</li>
+    </ul>
 
-    <hr class="divider" />
+    <hr class="section-divider" />
     
     <comment-form />
     <comment />
-  </main>
+  </div>
 </template>
 
 <style>
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 html, body {
   background-color: #0D0F2E !important;
+  color: #FFFDF6;
   margin: 0;
-  padding: 0;
   min-height: 100vh;
 }
 
-.main-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.divider {
+.section-divider {
+  width: 100%;
   border: 0;
   border-top: 2px solid #5C558F;
   margin: 40px 0;
+}
+
+.supabase-list {
+  text-align: left;
+  list-style-type: square;
 }
 </style>

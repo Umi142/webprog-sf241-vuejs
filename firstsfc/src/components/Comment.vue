@@ -26,12 +26,26 @@ onMounted(() => {
 </script>
 
 <style scoped>
-  /* Use 'scoped' so this yellow background doesn't leak to other components */
   div {
-    border: dashed black 1px;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightyellow;
+    border: 1px dashed #9F7AEA; /* Matching my purple theme */
+    display: block; /* Changed from inline-block to allow full width */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Dark background so white text is visible */
+    color: #FFFDF6; /* Force white text */
+    max-width: 600px; /* Makes it wider than a tiny box */
+    border-radius: 10px;
+    word-wrap: break-word; /* Fixes the text overflow */
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(159, 122, 234, 0.2);
   }
 </style>

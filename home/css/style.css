@@ -2,9 +2,12 @@ body {
     background-color: #0D0F2E; 
     font-family: Georgia, 'Times New Roman', Times, serif; 
     color: #FFFDF6; 
-    margin: 40px auto; 
-    padding: 20px;
-    max-width: 800px; 
+    margin: 0 auto; /* Centers the body content */
+    padding: 40px 20px;
+    max-width: 800px; /* Limits width so it stays a nice column */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items like the Food Gallery and Profile */
 }
 
 #app-message {
@@ -24,6 +27,7 @@ h1 {
     border-bottom: 2px solid #5C558F; 
     padding-bottom: 15px; 
     margin-bottom: 30px;
+    width: 100%; /* Ensures the border spans the whole container */
 }
 
 .profile-box {
@@ -58,7 +62,8 @@ img {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; 
+    gap: 15px; 
     margin-top: 20px;
 }
 
