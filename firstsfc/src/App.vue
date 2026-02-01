@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { supabase } from './lib/supabaseClient'
-
 import '../../home/css/style.css'
 
 const message = ref("Hello Vue!")
@@ -26,7 +25,7 @@ onMounted(() => { getInstruments() })
 </script>
 
 <template>
-  <div class="main-wrapper">
+  <div class="page-container">
     <div id="app-message">{{ message }}</div>
 
     <simplified-profile />
@@ -38,10 +37,12 @@ onMounted(() => { getInstruments() })
 
     <hr class="section-divider" />
     
-    <h2>Instruments from Supabase</h2>
-    <ul class="supabase-list">
-      <li v-for="inst in instruments" :key="inst.id">{{ inst.name }}</li>
-    </ul>
+    <div class="supabase-box">
+      <h2>Instruments from Supabase</h2>
+      <ul class="clean-list">
+        <li v-for="inst in instruments" :key="inst.id">{{ inst.name }}</li>
+      </ul>
+    </div>
 
     <hr class="section-divider" />
     
@@ -51,30 +52,37 @@ onMounted(() => { getInstruments() })
 </template>
 
 <style>
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 html, body {
   background-color: #0D0F2E !important;
   color: #FFFDF6;
   margin: 0;
+  padding: 0;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
 }
 
 .section-divider {
   width: 100%;
-  border: 0;
   border-top: 2px solid #5C558F;
   margin: 40px 0;
 }
 
-.supabase-list {
+.clean-list {
+  list-style: square;
   text-align: left;
-  list-style-type: square;
 }
 </style>

@@ -26,26 +26,35 @@ onMounted(() => {
 </script>
 
 <style scoped>
-  div {
-    border: 1px dashed #9F7AEA; /* Matching my purple theme */
-    display: block; /* Changed from inline-block to allow full width */
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.05); /* Dark background so white text is visible */
-    color: #FFFDF6; /* Force white text */
-    max-width: 600px; /* Makes it wider than a tiny box */
-    border-radius: 10px;
-    word-wrap: break-word; /* Fixes the text overflow */
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* wider form */
+  margin: 0 auto;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
+input, textarea {
+  width: 100%; /* Makes them fill the 600px width */
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #5C558F;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+}
 
-  li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid rgba(159, 122, 234, 0.2);
-  }
+textarea {
+  min-height: 120px; /* Gives more room for actual comments */
+  resize: vertical;
+}
+
+button {
+  width: 120px;
+  padding: 10px;
+  align-self: flex-start; /* Keeps the button on the left of the form */
+}
 </style>

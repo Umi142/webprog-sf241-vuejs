@@ -9,7 +9,7 @@ const profile = {
 </script>
 
 <template>
-  <div class="profile-container">
+  <div class="profile-wrapper">
     <h1>Personal Profile Web page - {{ name }}</h1>
     <div class="profile-box">
       <p><span class="label">Course:</span><br> {{ profile.course }}</p>
@@ -21,7 +21,10 @@ const profile = {
 </template>
 
 <style scoped>
-.profile-container {
+.profile-wrapper {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 </style>
