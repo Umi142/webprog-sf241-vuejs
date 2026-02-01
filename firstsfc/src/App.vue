@@ -4,7 +4,6 @@ import { supabase } from './lib/supabaseClient'
 
 import '../../home/css/style.css'
 
-// --- Profile ---
 const message = ref("Hello Vue!")
 const name = ref("Yumilka Gutierrez")
 const profile = ref({
@@ -24,7 +23,6 @@ const manyFoods = ref([
   'https://www.w3schools.com/vue/img_rice.svg'
 ])
 
-// --- Supabase Logic ---
 const instruments = ref([])
 
 async function getInstruments() {
@@ -38,7 +36,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
+  <main class="main-container">
     <p>The message is taken from 'data' inside the Vue instance: {{ message }}</p>
     <div id="app-message">{{ message }}</div>
 
@@ -51,25 +49,46 @@ onMounted(() => {
         <p><span class="label">Goals In Life/Dream:</span><br> {{ profile.goals }}</p>
     </div>
 
-    <h1 style="border-top: 2px solid #5C558F; padding-top: 20px;">Food Gallery (v-for)</h1>
+    <h1 class="section-title">Food Gallery (v-for)</h1>
     <div class="food-gallery">
         <img v-for="url in manyFoods" :key="url" :src="url" class="food-icon" alt="food item">
     </div>
 
-    <hr />
-    <h2>Instruments from Supabase</h2>
-    <ul>
-      <li v-for="instrument in instruments" :key="instrument.id">
-        {{ instrument.name }}
-      </li>
-    </ul>
+    <hr class="divider" />
+    
+    <section class="supabase-section">
+      <h2>Instruments from Supabase</h2>
+      <ul>
+        <li v-for="instrument in instruments" :key="instrument.id">
+          {{ instrument.name }}
+        </li>
+      </ul>
+    </section>
 
-    <hr />
+    <hr class="divider" />
+    
     <comment-form />
     <comment />
-  </div>
+  </main>
 </template>
 
 <style>
+html, body {
+  background-color: #0D0F2E !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
 
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.divider {
+  border: 0;
+  border-top: 2px solid #5C558F;
+  margin: 40px 0;
+}
 </style>
