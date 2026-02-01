@@ -2,9 +2,9 @@
 import { ref, onMounted } from 'vue'
 import { supabase } from './lib/supabaseClient'
 
-import './components/css/personalprofile.css'
+import '../../home/css/style.css'
 
-// --- Profile Data ---
+// --- Profile ---
 const message = ref("Hello Vue!")
 const name = ref("Yumilka Gutierrez")
 const profile = ref({
