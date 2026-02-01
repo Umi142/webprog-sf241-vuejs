@@ -7,6 +7,8 @@ import PersonalProfile from './components/PersonalProfile.vue'
 import CommentForm from './components/CommentForm.vue'
 import Comment from './components/Comment.vue'
 import SimplifiedProfile from './components/SimplifiedProfile.vue'
+import FoodGallery from './components/FoodGallery.vue'
+import InstrumentsList from './components/InstrumentsList.vue'
 
 const app = createApp(App)
 app.component('food-item', FoodItem)
@@ -15,4 +17,6 @@ app.component('personal-profile', PersonalProfile)
 app.component('comment-form', CommentForm)
 app.component('comment', Comment)
 app.component('simplified-profile', SimplifiedProfile)
+app.component('food-gallery', FoodGallery)
+app.component('instruments-list', InstrumentsList)
 app.mount('#app')
