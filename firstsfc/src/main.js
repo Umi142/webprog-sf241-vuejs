@@ -9,6 +9,7 @@ import Comment from './components/Comment.vue'
 import SimplifiedProfile from './components/SimplifiedProfile.vue'
 import FoodGallery from './components/FoodGallery.vue'
 import InstrumentsList from './components/InstrumentsList.vue'
+import RestApi from './components/RestApi.vue'
 
 const app = createApp(App)
 app.component('food-item', FoodItem)
@@ -19,4 +20,5 @@ app.component('comment', Comment)
 app.component('simplified-profile', SimplifiedProfile)
 app.component('food-gallery', FoodGallery)
 app.component('instruments-list', InstrumentsList)
+app.component('rest-api', RestApi)
 app.mount('#app')

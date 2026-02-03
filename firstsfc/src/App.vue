@@ -16,6 +16,7 @@ import '../../home/css/style.css'
     
     <comment-form />
     <comment />
+    <rest-api/> 
   </div>
 </template>
 
